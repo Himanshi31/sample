@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <script>
+        var formatter1 = {
+            createFullName: function (firstName, lastName) {
+                return firstName + ' ' + lastName;
+            }
+        };
+           var formatter2 = {
+            createFullName: function (firstName, lastName) {
+                return lastName + ', ' + firstName;
+            }
+        };
+
+        function printName(firstName, lastName) {
+            console.log(this.createFullName(firstName, lastName));
+        }
+        printName.call(formatter1, 'Joe', 'Smith');
+
+        printName.apply(formatter2, ['Joe', 'Smith']);        
+    </script>
+
+</body>
+
+</html>
